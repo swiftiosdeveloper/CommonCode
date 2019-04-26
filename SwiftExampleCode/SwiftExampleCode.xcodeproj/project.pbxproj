@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		695FCAFF22737D7400149D5D /* customClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 695FCAFE22737D7400149D5D /* customClass.m */; };
 		698C8F47227226F50058F368 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698C8F46227226F50058F368 /* AppDelegate.swift */; };
 		698C8F49227226F50058F368 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698C8F48227226F50058F368 /* ViewController.swift */; };
 		698C8F4C227226F50058F368 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 698C8F4A227226F50058F368 /* Main.storyboard */; };
@@ -18,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		695FCAFC22737D7400149D5D /* SwiftExampleCode-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftExampleCode-Bridging-Header.h"; sourceTree = "<group>"; };
+		695FCAFD22737D7400149D5D /* customClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = customClass.h; sourceTree = "<group>"; };
+		695FCAFE22737D7400149D5D /* customClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = customClass.m; sourceTree = "<group>"; };
 		698C8F43227226F50058F368 /* SwiftExampleCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftExampleCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		698C8F46227226F50058F368 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		698C8F48227226F50058F368 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -50,7 +54,6 @@
 				FE26E4EAF012C53E2CE97140 /* Pods-SwiftExampleCode.debug.xcconfig */,
 				7C74D3C825BEBAE364551834 /* Pods-SwiftExampleCode.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -60,6 +63,23 @@
 				C00D8FD333EC898179C617F9 /* Pods_SwiftExampleCode.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		695FCAFB22737D4800149D5D /* customClass */ = {
+			isa = PBXGroup;
+			children = (
+				695FCAFD22737D7400149D5D /* customClass.h */,
+				695FCAFE22737D7400149D5D /* customClass.m */,
+			);
+			path = customClass;
+			sourceTree = "<group>";
+		};
+		695FCB0022737DA200149D5D /* BridgingHeader */ = {
+			isa = PBXGroup;
+			children = (
+				695FCAFC22737D7400149D5D /* SwiftExampleCode-Bridging-Header.h */,
+			);
+			path = BridgingHeader;
 			sourceTree = "<group>";
 		};
 		698C8F3A227226F50058F368 = {
@@ -105,6 +125,8 @@
 		698C8F59227227120058F368 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				695FCB0022737DA200149D5D /* BridgingHeader */,
+				695FCAFB22737D4800149D5D /* customClass */,
 				698C8F5E227228FB0058F368 /* AppConstant */,
 				698C8F5B227227200058F368 /* New Group */,
 				698C8F5A227227170058F368 /* AppExtention */,
@@ -169,6 +191,7 @@
 				TargetAttributes = {
 					698C8F42227226F50058F368 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -236,6 +259,7 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SwiftExampleCode/Pods-SwiftExampleCode-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${PODS_ROOT}/Highcharts/development/Highcharts.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 			);
@@ -244,6 +268,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Highcharts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 			);
@@ -261,6 +286,7 @@
 			files = (
 				698C8F49227226F50058F368 /* ViewController.swift in Sources */,
 				698C8F5D227228D80058F368 /* AppExtention.swift in Sources */,
+				695FCAFF22737D7400149D5D /* customClass.m in Sources */,
 				698C8F47227226F50058F368 /* AppDelegate.swift in Sources */,
 				698C8F60227229170058F368 /* AppConstant.swift in Sources */,
 			);
@@ -409,6 +435,7 @@
 			baseConfigurationReference = FE26E4EAF012C53E2CE97140 /* Pods-SwiftExampleCode.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SwiftExampleCode/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -418,6 +445,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.SwiftExampleCode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Volumes/DATA D/Work/Demo/CommonCode/SwiftExampleCode/SwiftExampleCode/Util/BridgingHeader/SwiftExampleCode-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -428,6 +457,7 @@
 			baseConfigurationReference = 7C74D3C825BEBAE364551834 /* Pods-SwiftExampleCode.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SwiftExampleCode/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -437,6 +467,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.SwiftExampleCode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Volumes/DATA D/Work/Demo/CommonCode/SwiftExampleCode/SwiftExampleCode/Util/BridgingHeader/SwiftExampleCode-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
