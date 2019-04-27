@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		695FCAFF22737D7400149D5D /* customClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 695FCAFE22737D7400149D5D /* customClass.m */; };
+		697B2994227434D700ABA645 /* AreaSplineVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697B2993227434D700ABA645 /* AreaSplineVC.swift */; };
 		698C8F47227226F50058F368 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698C8F46227226F50058F368 /* AppDelegate.swift */; };
 		698C8F49227226F50058F368 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698C8F48227226F50058F368 /* ViewController.swift */; };
 		698C8F4C227226F50058F368 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 698C8F4A227226F50058F368 /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 		695FCAFC22737D7400149D5D /* SwiftExampleCode-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftExampleCode-Bridging-Header.h"; sourceTree = "<group>"; };
 		695FCAFD22737D7400149D5D /* customClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = customClass.h; sourceTree = "<group>"; };
 		695FCAFE22737D7400149D5D /* customClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = customClass.m; sourceTree = "<group>"; };
+		697B2993227434D700ABA645 /* AreaSplineVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaSplineVC.swift; sourceTree = "<group>"; };
 		698C8F43227226F50058F368 /* SwiftExampleCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftExampleCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		698C8F46227226F50058F368 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		698C8F48227226F50058F368 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				698C8F4D227226F60058F368 /* Assets.xcassets */,
 				698C8F4F227226F60058F368 /* LaunchScreen.storyboard */,
 				698C8F52227226F60058F368 /* Info.plist */,
+				697B2993227434D700ABA645 /* AreaSplineVC.swift */,
 			);
 			path = SwiftExampleCode;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				698C8F5D227228D80058F368 /* AppExtention.swift in Sources */,
 				695FCAFF22737D7400149D5D /* customClass.m in Sources */,
 				698C8F47227226F50058F368 /* AppDelegate.swift in Sources */,
+				697B2994227434D700ABA645 /* AreaSplineVC.swift in Sources */,
 				698C8F60227229170058F368 /* AppConstant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -447,7 +451,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Volumes/DATA D/Work/Demo/CommonCode/SwiftExampleCode/SwiftExampleCode/Util/BridgingHeader/SwiftExampleCode-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -468,7 +472,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.SwiftExampleCode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Volumes/DATA D/Work/Demo/CommonCode/SwiftExampleCode/SwiftExampleCode/Util/BridgingHeader/SwiftExampleCode-Bridging-Header.h";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
