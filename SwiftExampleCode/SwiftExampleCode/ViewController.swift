@@ -13,14 +13,91 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var chartDual: UIView!
     @IBOutlet weak var chartAreaSpline: UIView!
+    @IBOutlet weak var chartLineBar: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.self.
         
         self.initDualAxesLineAndColumnChart()
         self.initAreaSpline()
+        self.initLineBarGraph()
     }
+    func initLineBarGraph()
+    {
+        let chartView = HIChartView(frame: view.bounds)
+        
+        let options = HIOptions()
+        
+        let chart = HIChart()
+        chart.type = "column"
+        
+        let title = HITitle()
+        title.text = "Stacked column chart"
+        
+        let xaxis = HIXAxis()
+        xaxis.categories = ["Apples", "Oranges", "Pears", "Grapes", "Bananas"]
+        
+        let yaxis = HIYAxis()
+        yaxis.min = NSNumber(value: 0)
+        yaxis.title = HITitle()
+        yaxis.title.text = "Total fruit consumption"
+        yaxis.stackLabels = HIStackLabels()
+        yaxis.stackLabels.enabled = NSNumber(value: true)
+        yaxis.stackLabels.style = HICSSObject()
+        yaxis.stackLabels.style.fontWeight = "bold"
+        yaxis.stackLabels.style.color = "gray"
 
+        let legend = HILegend()
+        legend.align = "right"
+        legend.x = NSNumber(value: -30)
+        legend.verticalAlign = "top"
+        legend.y = NSNumber(value: 25)
+        legend.floating = NSNumber(value: true)
+        legend.backgroundColor = HIColor(name: "white")
+        legend.borderColor = HIColor(hexValue: "ccc")
+        legend.borderWidth = NSNumber(value: 1)
+        legend.shadow = NSNumber(value: false)
+        
+        let tooltip = HITooltip()
+        tooltip.pointFormat = "{series.name}: {point.y}<br/>Total: {point.stackTotal}"
+        tooltip.headerFormat = "<b>{point.x}</b><br/>"
+        
+        let plotoptions = HIPlotOptions()
+        plotoptions.column = HIColumn()
+        plotoptions.column.stacking = "normal"
+        plotoptions.column.dataLabels = HIDataLabels()
+        plotoptions.column.dataLabels.enabled = NSNumber(value: true)
+        plotoptions.column.dataLabels.color = HIColor(name: "white")
+        plotoptions.column.dataLabels.style = HICSSObject()
+        plotoptions.column.dataLabels.style.textOutline = "0 0 3px black"
+        
+        
+        let column1 = HIColumn()
+        column1.name = "John"
+        column1.data = [NSNumber(value: 5), NSNumber(value: 3), NSNumber(value: 4), NSNumber(value: 7), NSNumber(value: 2)]
+        
+        let column2 = HIColumn()
+        column2.name = "Jane"
+        column2.data = [NSNumber(value: 2), NSNumber(value: 2), NSNumber(value: 3), NSNumber(value: 2), NSNumber(value: 1)]
+        
+        let column3 = HIColumn()
+        column3.name = "Joe"
+        column3.data = [NSNumber(value: 3), NSNumber(value: 4), NSNumber(value: 4), NSNumber(value: 2), NSNumber(value: 5)]
+
+        options.chart = chart
+        options.title = title
+        options.xAxis = [xaxis]
+        options.yAxis = [yaxis]
+        options.legend = legend
+        options.tooltip = tooltip
+        options.plotOptions = plotoptions
+        options.series = [column1, column2, column3]
+        
+        chartView.options = options
+        
+        view.addSubview(chartView)
+        
+    }
     
     func initDualAxesLineAndColumnChart()
     {
@@ -101,7 +178,7 @@ class ViewController: UIViewController {
     
     func initAreaSpline()
     {
-        let chartView = HIChartView(frame: chartAreaSpline.bounds)
+        let chartView = HIChartView(frame: chartLineBar.bounds)
         
         let options = HIOptions()
         
@@ -165,7 +242,7 @@ class ViewController: UIViewController {
 
         chartView.options = options
         
-        chartAreaSpline.addSubview(chartView)
+        chartLineBar.addSubview(chartView)
         
     }
 
