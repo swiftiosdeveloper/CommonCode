@@ -59,6 +59,7 @@ class AreaSplineVC: UIViewController {
         let plotoptions = HIPlotOptions()
         plotoptions.areaspline = HIAreaspline()
         plotoptions.areaspline.fillOpacity = NSNumber(value: 0.5)
+        
         let areaspline1 = HIAreaspline()
         areaspline1.name = "John"
         areaspline1.data = [NSNumber(value: 3), NSNumber(value: 4), NSNumber(value: 3), NSNumber(value: 5), NSNumber(value: 4), NSNumber(value: 10), NSNumber(value: 12)]

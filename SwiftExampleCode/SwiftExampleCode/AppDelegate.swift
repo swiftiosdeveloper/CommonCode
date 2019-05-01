@@ -41,6 +41,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    func showHomeTabbar() {
+        UITabBarItem.appearance().setTitleTextAttributes([.foregroundColor : UIColor.black], for: .normal)
+        UITabBarItem.appearance().setTitleTextAttributes([.foregroundColor : UIColor.black], for: .selected)
+        let tabbarVC = UIStoryboard.tabbar.instantiateInitialViewController()!
+        tabbarVC.view.alpha = 0
+        self.window?.rootViewController = tabbarVC
+        self.window?.makeKeyAndVisible()
+        DispatchQueue.main.async {
+            UIView.transition(with: self.window ?? UIView(), duration: 0.3, options: .curveEaseIn, animations: {
+                tabbarVC.view.alpha = 1.0
+            }, completion: nil)
+        }
+    }
 }
 
