@@ -38,4 +38,22 @@ extension UIViewController {
         SVProgressHUD.dismiss()
     }
     
+    func reloadWithoutAnimation(indexPath : IndexPath,_ completion: @escaping ()->()) {
+        UIView.animate(withDuration: 0, animations: {
+            //DispatchQueue.main.async {
+            UIView.setAnimationsEnabled(false)
+            self.layer.removeAllAnimations()
+            let lastScrollOffset = self.contentOffset
+            self.beginUpdates()
+            self.reloadRows(at: [indexPath], with: .none)
+            self.endUpdates()
+            self.setContentOffset(lastScrollOffset, animated: false)
+            UIView.setAnimationsEnabled(true)
+            //}
+        }, completion:{ _ in
+            completion()
+        })
+        
+    }
+    
 }
