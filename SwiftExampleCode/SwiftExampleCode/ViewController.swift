@@ -242,6 +242,29 @@ class ViewController: UIViewController {
 //        
 //
 //    }
+    
+    func showImagePickingActionSheet() {
+        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        actionSheet.addAction(UIAlertAction(title: "Take Photo", style: .default, handler: { (action) in
+            self.showImagePicker(withSourceType: .camera)
+        }))
+        actionSheet.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: { (action) in
+            self.showImagePicker(withSourceType: .photoLibrary)
+        }))
+        if self.images[imageIndex] != nil {
+            actionSheet.addAction(UIAlertAction(title: "View", style: .default, handler: { (action) in
+                self.showMediaBrowser(index: self.imageIndex)
+            }))
+        }
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        self.tabBarController?.present(actionSheet, animated: true)
+    }
+    func showImagePicker(withSourceType source: UIImagePickerController.SourceType) {
+        let mediaTypes = [kUTTypeImage].map({ $0 as String })
+        let imagePicker = ImagePickerManager.shared.imagePickerController(withSourceType: source, mediaTypes: mediaTypes)
+        ImagePickerManager.shared.imagePickerDelegate = self
+        self.tabBarController?.present(imagePicker, animated: true)
+    }
 
 }
 
