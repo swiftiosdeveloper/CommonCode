@@ -97,3 +97,17 @@ extension UIView {
     }
     
 }
+
+// MARK: - Data
+extension Data {
+    func getJSONResponse() -> Any? {
+        guard let response = try? JSONSerialization.jsonObject(with: self) else {
+            return nil
+        }
+        return response
+    }
+    
+    var size: Double {
+        return Double(self.count) / (1000 * 1000)
+    }
+}
