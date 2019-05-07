@@ -111,3 +111,20 @@ extension Data {
         return Double(self.count) / (1000 * 1000)
     }
 }
+// MARK: - DateFormatter
+extension DateFormatter {
+    static let ddMMyyyy = "dd/MM/yyyy"
+    static let yyyyMMdd = "yyyy-MM-dd"
+    static let yyyyMMddHHmmss = "yyyy-MM-dd HH:mm:ss"
+}
+
+// MARK: - Date
+extension Date {
+    func getString(in format: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format
+        return dateFormatter.string(from: self)
+    }
+    
+    
+}
