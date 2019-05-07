@@ -1,9 +1,9 @@
 //
-//  ImagePickerManager.swift
-//  THGCEM
+//  ImagePickerManager
+//  SwiftExampleCode
 //
-//  Created by Nirav Jariwala on 04/01/19.
-//  Copyright © 2019 Nirav Jariwala. All rights reserved.
+//  Created by JITESH on 25/04/19.
+//  Copyright © 2019 JITESH. All rights reserved.
 //
 
 import UIKit
